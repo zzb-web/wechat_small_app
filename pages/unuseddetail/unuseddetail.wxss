@@ -1,0 +1,124 @@
+/* pages/unuseddetail/unuseddetail.wxss */
+.detail-content{
+  width: 94%;
+  background-color: #fff;
+  margin-left: 3%;
+  box-shadow: 2rpx 4rpx 5rpx #888888;
+  border-radius: 20rpx;
+}
+.detail-content>view{
+  width: 94%;
+  margin-left: 3%;
+}
+.user-msg{
+  height: 90rpx;
+  border-bottom: 1rpx solid #777;
+  padding-top: 80rpx;
+}
+.user-msg>view{
+  float: left;
+}
+.user-msg>view:first-child{
+  width: 70rpx;
+  height: 70rpx;
+}
+.user-name{
+  float: left;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.goods-msg{
+  height: 130rpx;
+  position: relative;
+}
+.goods-name{
+  float : left;
+  width: 70%;
+  height: 130rpx;
+  line-height: 130rpx;
+}
+.goods-price{
+  color: #CC1C1C;
+  float: left;
+  width: 30%;
+  height: 130rpx;
+  line-height: 130rpx;
+  text-align: right;
+  font-size: 56rpx;
+  font-weight: 600;
+}
+.off-price{
+  width: 100rpx;
+  height: 40rpx;
+  position: absolute;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  right: 0;
+  bottom: 0;
+  color: #777;
+  text-decoration:line-through;
+}
+.deal-way{
+  height: 60rpx;
+  font-size: 26rpx;
+  color: #777;
+  line-height: 60rpx;
+}
+.user-spec{
+  font-size: 30rpx;
+  word-break: break-all;
+}
+.image-box{
+  width: 100%;
+  margin-top: 30rpx;
+}
+.image-box image{
+  width: 94%;
+  position: relative;
+  left: 3%;
+}
+.share-box{
+  margin-top: 20rpx;
+  height: 40rpx;
+  width: auto !important;
+  position: relative;
+  font-size: 30rpx;
+  color:#fba5a6;
+  left: calc(100% - 150rpx);
+  padding-bottom: 30rpx;
+}
+.share-box > image{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-top: 5rpx;
+}
+.share-box > text{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+.get-btn{
+  height: 100rpx;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  margin-top: 50rpx;
+}
+.get-btn > view{
+  width: 50%;
+  float: left;
+}
+.by-phone{
+  background-color: #959595;
+}
+.by-wechat{
+  background-color: #F1F1F1;
+  color: #fba5a6;
+}

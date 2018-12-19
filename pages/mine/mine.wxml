@@ -1,0 +1,50 @@
+<!--pages/mine/mine.wxml-->
+<view class='mine-title'>
+  <view class='avatar'>
+    <wxc-avatar src='../../images/timg.jpg'></wxc-avatar>
+  </view>
+  <view class='nick-name'>{{nickname}}</view>
+</view>
+
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_small-appmsg">
+      <view class="weui-cells weui-cells_in-small-appmsg">
+        <navigator url="../personalinfo/personalinfo" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="../../images/userinfo.png" class='mine-icon'/>
+          </view>
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>个人信息</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="../../images/4_46.png" class='mine-icon' />
+          </view>
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>我的余额</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+         <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="../../images/4_55.png"  class='mine-icon' />
+          </view>
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>意见反馈</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+         <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="../../images/4_66.png"  class='mine-icon'/>
+          </view>
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>联系客服</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,39 @@
+<!--pages/index/index.wxml-->
+<view class='swiper-content'>
+  <swiper indicator-dots="true"
+  class='swiper-box'
+  autoplay="true" 
+  circular="true"
+  interval="5000" duration="500">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view class='grid-box'>
+  <block wx:for="{{grids}}" wx:key="{{index}}">
+    <view class='grid' data-index='{{index}}' bindtap='toDetail'>
+      <image src='{{item}}'></image>
+    </view>
+  </block>
+</view>
+<view class='onekey' bindtap="showPopup">
+  <image src='../../images/add.png'></image>
+</view>
+<wxc-popup class="J_Popup" animation-mode="none" align="center" locked="true">
+    <view class="onekey_content" bindtap='hidePopup'>
+      <view class='onekey-box'>
+        <block wx:for="{{onekeys}}" wx:key="{{index}}">
+          <view class='onekey-grid' data-idx='{{index}}' bindtap='addHnadle'>
+            <image src='{{item}}'></image>
+          </view>
+          </block>
+          <view class='onekey-close'>
+            <image src='../../images/close.png'></image>
+          </view>
+      </view>
+      
+    </view>
+  </wxc-popup>

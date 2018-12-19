@@ -1,0 +1,38 @@
+<!--pages/personalinfo/personalinfo.wxml-->
+<view class='upload-image'>
+  <image></image>
+</view>
+<view class='user-info'>
+  <view class='user-info-item'>
+    <image src='' />
+    <input placeholder='请输入您的昵称' bindinput='nickNameChange' value='{{nickName}}' placeholder-class='placeholder'></input>
+  </view>
+  <view class='user-info-item'>
+    <image src='' />
+    <input placeholder='请输入您的姓名' bindinput='userNameChange' placeholder-class='placeholder' value='{{userName}}'></input>
+  </view>
+  <view class='user-info-item'>
+    <image src='' />
+    <input placeholder='请输入您的微信号' bindinput='wechatChange' placeholder-class='placeholder' value='{{wechat}}'></input>
+  </view>
+  <view class='user-info-item'>
+    <image src='' />
+    <input placeholder='请输入您的手机号' type='number' bindinput='phoneNumberChange' placeholder-class='placeholder' value='{{phoneNumber}}'></input>
+  </view>
+  <view class='user-know'>
+    <label>
+      <checkbox/>
+      <text>我已阅读并同意</text>
+      <text>《校园助助用户协议》</text>
+    </label>
+  </view>
+</view>
+<view class='user-info upload-schoolcard'>
+  <view class='scholcard-title'>
+    <image src='../../images/school.png'/>
+    <text>校园卡认证</text>
+  </view>
+  <view class='upload-schoolcard-img'>
+  </view>
+</view>
+<view bindtap='sureOk' class='btn'>确认提交</view>

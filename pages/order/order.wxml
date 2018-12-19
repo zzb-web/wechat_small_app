@@ -1,0 +1,25 @@
+<!--pages/order/order.wxml-->
+<view class='order-item'>
+  <view class='order-name'>
+    <view class='order-image'></view>
+    <view class='order-word'>我的快递</view>
+  </view>
+</view>
+<view class='order-item' bindtap='toMyHelp'>
+  <view class='order-name'>
+    <view class='order-image'></view>
+    <view class='order-word'>我的求助</view>
+  </view>
+</view>
+<view class='order-item'>
+  <view class='order-name'>
+    <view class='order-image'></view>
+    <view class='order-word'>我的闲置</view>
+  </view>
+</view>
+<view class='order-item'>
+  <view class='order-name'>
+    <view class='order-image'></view>
+    <view class='order-word'>我的上墙</view>
+  </view>
+</view>

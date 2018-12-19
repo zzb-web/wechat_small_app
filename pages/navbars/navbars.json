@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-popup": "../../dist/packages/@minui/wxc-popup/dist/index",
+    "wxc-avatar": "../../dist/packages/@minui/wxc-avatar/dist/index"
+  }
+}

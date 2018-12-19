@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#fba5a6",
+  "usingComponents": {
+    "wxc-avatar": "../../dist/packages/@minui/wxc-avatar/dist/index"
+  }
+}

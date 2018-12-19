@@ -1,0 +1,111 @@
+<!--pages/myhelp/myhelp.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+
+        <!----------------------------我的发布------------------------------->
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="page">
+            <view class="page__bd">
+              <view class="weui-tab">
+                <view class="weui-navbar weui-navbar-2">
+                  <block wx:for="{{unusedMenus}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{unusedIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="unusedTabClick">
+                      <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                  </block>
+                  <view class="weui-navbar__slider unused_slider" style="left: {{unusedSliderLeft}}px; transform: translateX({{unusedSliderOffset}}px); -webkit-transform: translateX({{unusedSliderOffset}}px);"></view>
+                </view>
+                <view class="weui-tab__panel">
+                  <!-- ---------------全部------------ -->
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 0}}">
+                    <view class="show-box unused-box">
+                        <view class='comm-panel'>
+                          <view class='panel-title'>
+                            <view>代课</view>
+                            <view>¥15</view>
+                          </view>
+                          <view class='gender font'>性别要求：男</view>
+                          <view class='detail font'>具体要求:12312312312312</view>
+                          <view class='stop'>求助截止日期：2018-12-08</view>
+                        </view>
+                         <view class='comm-panel'>
+                          <view class='panel-title'>
+                            <view>代课</view>
+                            <view>¥15</view>
+                          </view>
+                          <view class='gender font'>性别要求：男</view>
+                          <view class='detail font'>具体要求:12312312312312123131231231312312313123123</view>
+                          <view class='stop'>求助截止日期：2018-12-08</view>
+                        </view>
+                         <view class='comm-panel'>
+                          <view class='panel-title'>
+                            <view>代课</view>
+                            <view>¥15</view>
+                          </view>
+                          <view class='gender font'>性别要求：男</view>
+                          <view class='detail font'>具体要求:12312312312312123131231231312312313123123aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</view>
+                          <view class='stop'>求助截止日期：2018-12-08</view>
+                        </view>
+                    </view>
+                  </view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 1}}">选项二的内容</view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 2}}">选项三的内容</view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 3}}">选项四的内容</view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 4}}">选项五的内容</view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 5}}">选项六的内容</view>
+                </view>
+              </view>
+              <view class='unused-more'>
+                <image class='more-img' src='../../images/search.png'></image>
+                <image class='more-img' src='../../images/add.png' bindtap='addUnused'></image>
+                <image class='more-img' src='../../images/refresh.png'></image>
+              </view>
+            </view>
+          </view>
+
+        </view>
+
+        <!----------------------------我的接单----------------------------->
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class="show-box help-box">
+            <view class='express-panel' bindtap='toWallDetail'>
+              <view class='user-msg'>
+                <view>
+                  <wxc-avatar src='../../images/mine_1.png'>U</wxc-avatar>
+                </view>
+                <view>
+                  <view class='user-name'>测试名AABB</view>
+                  <view class='user-time'>2018.12.11 星期二</view>
+                </view>
+              </view>
+              <view class='wall-msg'>有没有人喜欢菜篮子？</view>
+              <view class='wall-more'>
+                <image src='../../images/love.png' class='wall-more-1' catchtap='loveWallHandle'></image>
+                <image src='../../images/talk.png' class='wall-more-2'></image>
+                <image src='../../images/more.png' class='wall-more-3'></image>
+              </view>
+            </view>
+            <view class='express-panel' bindtap='toExpressDetail'></view>
+            <view class='express-panel' bindtap='toExpressDetail'></view>
+            <view class='express-panel' bindtap='toExpressDetail'></view>
+          </view>
+          <view class='more'>
+            <image class='more-img' src='../../images/search.png'></image>
+            <image class='more-img' src='../../images/add.png' bindtap='addWallHandle'></image>
+            <image class='more-img' src='../../images/refresh.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/navbars/navbars",
+    "pages/expressdetail/expressdetail",
+    "pages/helpdetail/helpdetail",
+    "pages/addexpress/addexpress",
+    "pages/upperwall/upperwall",
+    "pages/addwall/addwall",
+    "pages/addhelp/addhelp",
+    "pages/addunused/addunused",
+    "pages/unuseddetail/unuseddetail",
+    "pages/myhelp/myhelp",
+    "pages/personalinfo/personalinfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#E7E9E8",
+    "navigationBarTitleText": "校园助助",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath" : "images/home_2.png",
+        "selectedIconPath":"images/home_1.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "帮帮订单",
+        "iconPath": "images/order_2.png",
+        "selectedIconPath": "images/order_1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine_2.png",
+        "selectedIconPath": "images/mine_1.png"
+      }
+    ]
+  }
+}

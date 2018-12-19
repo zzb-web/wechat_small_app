@@ -1,0 +1,305 @@
+<!--pages/navbars/navbars.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <!----------------------------快递------------------------------->
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class='option'>
+            <view class='option-filter' bindtap='showMoneyBoxHandle'>酬金高低</view>
+            <text></text>
+            <view class='option-filter' bindtap='showTimeBoxHandle'>时间筛选</view>
+          </view>
+          <view class='filter-box' hidden='{{showMoneyBox}}'>
+            <view class='money-filter'>
+              <block wx:for="{{moneyFilter}}" wx:key="{{index}}">
+                <view data-index="{{index}}" bindtap='filterMoneyHandle'>
+                  {{item}}
+                  <view class='money-selected' hidden='{{activeMoneyOption != index}}'></view>
+                </view>
+              </block>
+            </view>
+            <view class='close-area' bindtap='hideMoneyBoxHandle'></view>
+          </view>
+          <view class='filter-box' hidden='{{showTimeBox}}'>
+            <view class='time-filter'>
+              <view class='time-content-1'>
+                <block wx:for="{{timeFilter}}" wx:key="{{index}}">
+                  <view class="time-option {{activeTimeOption == index ? 'active_time-option' : ''}}" data-index="{{index}}" bindtap='timeOptionHandle'>{{item}}</view>
+                </block>
+              </view>
+              <view class='time-content-2' hidden='{{activeTimeOption == 0}}' >
+                <block wx:for="{{timeOptions}}" wx:key="{{index}}">
+                  <view class="time-option-detail" data-detailtime="{{index}}" bindtap='detailTimeSelect'>{{item}}:00 之前</view>
+                </block>
+              </view>
+            </view>
+            <view class='close-area' bindtap='hideTimeBoxHandle'></view>
+          </view>
+          <scroll-view class="show-box" scroll-y='true' bindscrolltolower='moreExpressHandle'>
+           <block wx:for="{{expressLists}}" wx:key="{{ite.id}}">
+            <view class='express-panel' bindtap='toExpressDetail' data-id='{{item.id}}'>
+              <view class='express-panel-title'>
+                <text>{{item.deliveryAddress}}</text>
+                <text>¥{{item.money/100}}</text>
+              </view>
+              <view class='express-line'></view>
+              <view class='express-panel-content'>
+                <view>快递所在点: {{item.expressAddress}}</view>
+                <view>快递件数: {{item.count}}件</view>
+                <view>最晚送达时间:{{item.endTime}} 之前</view>
+                <view>备注: {{item.remark}}</view>
+              </view>
+              <image class='express-status' src="{{item.status==1?'../../images/4_25.png':'../../images/4_46.png'}}"/>
+            </view>
+            </block>
+            <view class='load-more' hidden='{{expressMore}}'>加载更多</view>
+          </scroll-view>
+          <view class='more'>
+            <image class='more-img' src='../../images/search.png'></image>
+            <image class='more-img' src='../../images/add.png' bindtap='addExpressHandle'></image>
+            <image class='more-img' src='../../images/refresh.png'></image>
+          </view>
+        </view>
+        <!----------------------------求助------------------------------->
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <scroll-view class="show-box help-box" scroll-y='true' bindscrolltolower='test'>
+            <view class='express-panel' bindtap='toHelpDetail'>
+              <view class='express-panel-title'>
+                <text>代课</text>
+                <text>¥ 4</text>
+              </view>
+              <view class='express-line'></view>
+              <view class='express-panel-content'>
+                <view>性别要求：男</view>
+                <view class='detail-require'>具体要求：15栋501上课，点名dadadadadadadadadasdadadasfadfasdfgashfdghd</view>
+                <view></view>
+                <view>求助截止时间：2012-12-08</view>
+              </view>
+            </view>
+
+            <view class='express-panel' bindtap='toHelpDetail'>
+              <view class='express-panel-title'>
+                <text>代课</text>
+                <text>¥ 4</text>
+              </view>
+              <view class='express-line'></view>
+              <view class='express-panel-content'>
+                <view>性别要求：男</view>
+                <view>具体要求：15栋501上课，点名</view>
+                <view></view>
+                <view>求助截止时间：2012-12-08</view>
+              </view>
+            </view>
+
+            <view class='express-panel' bindtap='toHelpDetail'>
+              <view class='express-panel-title'>
+                <text>代课</text>
+                <text>¥ 4</text>
+              </view>
+              <view class='express-line'></view>
+              <view class='express-panel-content'>
+                <view>性别要求：男</view>
+                <view>具体要求：15栋501上课，点名</view>
+                <view></view>
+                <view>求助截止时间：2012-12-08</view>
+              </view>
+            </view>
+
+            <view class='express-panel' bindtap='toHelpDetail'>
+              <view class='express-panel-title'>
+                <text>代课</text>
+                <text>¥ 4</text>
+              </view>
+              <view class='express-line'></view>
+              <view class='express-panel-content'>
+                <view>性别要求：男</view>
+                <view>具体要求：15栋501上课，点名</view>
+                <view></view>
+                <view>求助截止时间：2012-12-08</view>
+              </view>
+            </view>
+
+          </scroll-view>
+          <view class='more'>
+            <image class='more-img' src='../../images/search.png'></image>
+            <image class='more-img' src='../../images/add.png' bindtap='addHelpHandle'></image>
+            <image class='more-img' src='../../images/refresh.png'></image>
+          </view>
+        </view>
+
+        <!----------------------------闲置------------------------------->
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+          <view class="page">
+            <view class="page__bd">
+              <view class="weui-tab">
+                <view class="weui-navbar">
+                  <block wx:for="{{unusedMenus}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{unusedIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="unusedTabClick">
+                      <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                  </block>
+                  <view class="weui-navbar__slider unused_slider" style="left: {{unusedSliderLeft}}px; transform: translateX({{unusedSliderOffset}}px); -webkit-transform: translateX({{unusedSliderOffset}}px);"></view>
+                </view>
+                <view class="weui-tab__panel">
+                  <!-- ---------------全部------------ -->
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 0}}">
+                    <view class="show-box unused-box">
+                      <view class='express-panel' bindtap='toUnusedDetail'>
+                        <view class='express-panel-title'>
+                          <text>爱马仕金扣菜篮手提袋</text>
+                          <text>¥ 500</text>
+                        </view>
+                        <view class='express-line'></view>
+                        <view class='unused-panel-content'>
+                          <view class='unused-showImg'>
+                            <image src='../../images/timg.jpg'></image>
+                          </view>
+                          <view class='unused-content'>
+                            有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？ 有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？ 有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？
+                          </view>
+                          <view class='unused-detail-btn'>
+                            <view class='unused-detail-word'>
+                              <text>详情</text>
+                              <image src='../../images/to_right.png'></image>
+                            </view>
+                            <view class='unused-detail-date'>2018.12.15 星期六</view>
+                          </view>
+                        </view>
+                      </view>
+
+                      <view class='express-panel' bindtap='toUnusedDetail'>
+                        <view class='express-panel-title'>
+                          <text>爱马仕金扣菜篮手提袋</text>
+                          <text>¥ 500</text>
+                        </view>
+                        <view class='express-line'></view>
+                        <view class='unused-panel-content'>
+                          <view class='unused-showImg'>
+                            <image src='../../images/timg.jpg'></image>
+                          </view>
+                          <view class='unused-content'>
+                            有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？ 有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？ 有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？
+                          </view>
+                          <view class='unused-detail-btn'>
+                            <view class='unused-detail-word'>
+                              <text>详情</text>
+                              <image src='../../images/to_right.png'></image>
+                            </view>
+                            <view class='unused-detail-date'>2018.12.15 星期六</view>
+                          </view>
+                        </view>
+                      </view>
+
+                    </view>
+                  </view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 1}}">选项二的内容</view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 2}}">选项三的内容</view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 3}}">选项四的内容</view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 4}}">选项五的内容</view>
+                  <view class="weui-tab__content" hidden="{{unusedIndex != 5}}">选项六的内容</view>
+                </view>
+              </view>
+              <view class='unused-more'>
+                <image class='more-img' src='../../images/search.png'></image>
+                <image class='more-img' src='../../images/add.png' bindtap='addUnused'></image>
+                <image class='more-img' src='../../images/refresh.png'></image>
+              </view>
+            </view>
+          </view>
+
+        </view>
+
+        <!----------------------------上墙------------------------------->
+        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+          <view class="show-box help-box">
+            <view class='express-panel' bindtap='toWallDetail'>
+              <view class='user-msg'>
+                <view>
+                  <wxc-avatar src='../../images/mine_1.png'>U</wxc-avatar>
+                </view>
+                <view>
+                  <view class='user-name'>测试名AABB</view>
+                  <view class='user-time'>2018.12.11 星期二</view>
+                </view>
+              </view>
+              <view class='wall-msg'>有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？</view>
+              <view class='wall-more'>
+                <image src='../../images/love.png' class='wall-more-1' catchtap='loveWallHandle'></image>
+                <image src='../../images/talk.png' class='wall-more-2'></image>
+                <image src='../../images/more.png' class='wall-more-3'></image>
+              </view>
+            </view>
+
+            <view class='express-panel' bindtap='toWallDetail'>
+              <view class='user-msg'>
+                <view>
+                  <wxc-avatar src='../../images/mine_1.png'>U</wxc-avatar>
+                </view>
+                <view>
+                  <view class='user-name'>测试名AABB</view>
+                  <view class='user-time'>2018.12.11 星期二</view>
+                </view>
+              </view>
+              <view class='wall-msg'>有没有人喜欢菜篮子？</view>
+              <view class='wall-more'>
+                <image src='../../images/love.png' class='wall-more-1' catchtap='loveWallHandle'></image>
+                <image src='../../images/talk.png' class='wall-more-2'></image>
+                <image src='../../images/more.png' class='wall-more-3'></image>
+              </view>
+            </view>
+
+            <view class='express-panel' bindtap='toWallDetail'>
+              <view class='user-msg'>
+                <view>
+                  <wxc-avatar src='../../images/mine_1.png'>U</wxc-avatar>
+                </view>
+                <view>
+                  <view class='user-name'>测试名AABB</view>
+                  <view class='user-time'>2018.12.11 星期二</view>
+                </view>
+              </view>
+              <view class='wall-msg'>有没有人喜欢菜篮子？</view>
+              <view class='wall-more'>
+                <image src='../../images/love.png' class='wall-more-1' catchtap='loveWallHandle'></image>
+                <image src='../../images/talk.png' class='wall-more-2'></image>
+                <image src='../../images/more.png' class='wall-more-3'></image>
+              </view>
+            </view>
+
+            <view class='express-panel' bindtap='toWallDetail'>
+              <view class='user-msg'>
+                <view>
+                  <wxc-avatar src='../../images/mine_1.png'>U</wxc-avatar>
+                </view>
+                <view>
+                  <view class='user-name'>测试名AABB</view>
+                  <view class='user-time'>2018.12.11 星期二</view>
+                </view>
+              </view>
+              <view class='wall-msg'>有没有人喜欢菜篮子？</view>
+              <view class='wall-more'>
+                <image src='../../images/love.png' class='wall-more-1' catchtap='loveWallHandle'></image>
+                <image src='../../images/talk.png' class='wall-more-2'></image>
+                <image src='../../images/more.png' class='wall-more-3'></image>
+              </view>
+            </view>
+          </view>
+          <view class='more'>
+            <image class='more-img' src='../../images/search.png'></image>
+            <image class='more-img' src='../../images/add.png' bindtap='addWallHandle'></image>
+            <image class='more-img' src='../../images/refresh.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

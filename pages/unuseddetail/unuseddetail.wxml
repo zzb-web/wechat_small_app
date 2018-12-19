@@ -1,0 +1,40 @@
+<!--pages/unuseddetail/unuseddetail.wxml-->
+
+<view class='detail-content'>
+  <view class='user-msg'>
+    <view>
+      <wxc-avatar src='../../images/mine_1.png'></wxc-avatar>
+    </view>
+    <view>
+      <view class='user-name'>测试名AABB</view>
+    </view>
+  </view>
+  <view class='goods-msg'>
+    <view class='goods-name'>MAKE UP FOREVER粉饼</view>
+    <view class='goods-price'>¥199</view>
+    <view class='off-price'> ¥299 </view>
+  </view>
+  <view class='deal-way'>
+    交易方式：自提
+  </view>
+  <view class='user-spec'>
+    QWEQWEQE1232123132123132132132165QWEQEQWE123132132121231321212312312312315612312123123123
+32231212132112121212121231213213213212313212313211232123132123132132132165123132132121231321212312312312ASDAAAAAAAAASDASDA
+  </view>
+  <view class='image-box'>
+    <image src='../../images/test.jpg' mode='widthFix'></image>
+    <image src='../../images/test-2.jpg' mode='widthFix'></image>
+  </view>
+  <view class='share-box'>
+    <image src='../../images/share.png'></image>
+    <text>分享</text>
+  </view>
+  
+</view>
+
+
+<view class='get-btn'>
+  <view class='by-phone'>电话联系</view>
+  <view class='by-wechat'>微信联系</view>
+</view>
+

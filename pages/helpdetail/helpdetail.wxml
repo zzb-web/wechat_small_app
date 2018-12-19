@@ -1,0 +1,31 @@
+<!--pages/helpderail/helpdetail.wxml-->
+
+<view class='detail-content'>
+  <view class='user-msg'>
+    <view>
+      <wxc-avatar src='../../images/mine_1.png'></wxc-avatar>
+    </view>
+    <view>
+      <view class='user-name'>测试名AABB</view>
+      <view class='price'>¥5</view>
+    </view>
+  </view>
+  <view class='wall-msg'>有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜篮子？有没有人喜欢菜</view>
+  <view class='stop-time'>求助截止时间：2018-12-9 22:30</view>
+  <view class='gender'>
+    <text>性别要求</text>
+    <text>男女不限</text>
+  </view>
+   <view class='content'>
+    <text>求助内容</text>
+    <text>金文野的中国当代文学作品金文野的中国当代文学作品金文野的中国当代文学作品金文野的中国当代文学作品金文野的中国当代文学作品金文野的中国当代文学作品金文野的中国当代文学作品金文野的中国当代文学作品金文野的中国当代</text>
+  </view>
+  <view class='share-box'>
+    <image src='../../images/share.png'></image>
+    <text>分享</text>
+  </view>
+  
+</view>
+
+
+<view class='get-btn'>我要接单</view>

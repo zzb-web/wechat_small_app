@@ -1,0 +1,31 @@
+/* pages/mine/mine.wxss */
+.mine-title{
+  width: 100%;
+  height: 300rpx;
+  background-color: #fba5a6;
+  display: flex;
+  flex-direction : column;
+  justify-content: center;
+}
+.avatar{
+  height: 150rpx;
+  width: 150rpx;
+  margin:  0 auto;
+}
+.nick-name{
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.mine-items{
+  width: 100%;
+  border: 1rpx solid blue;
+}
+.mine-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+.weui-cell_primary{
+  margin-left: 20rpx;
+}

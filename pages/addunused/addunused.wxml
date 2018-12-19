@@ -1,0 +1,120 @@
+<!--pages/addunused/addunused.wxml-->
+
+<scroll-view class='detail-content' scroll-y='true'>
+  <view class='basisc-msg'>
+    <view class='express-title'>
+      <view class='express-dot'></view>
+      <view class='title-words'>
+        <text>个人信息</text>
+        <text>(除接单人外，该栏信息不会对外公布)</text>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>姓名</view>
+      <view class='detail-box'>
+        <input placeholder='请输入本次发布人的姓名' placeholder-class='input-class'></input>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>手机号</view>
+      <view class='detail-box'>
+        <input placeholder='请输入发布人的手机号码' placeholder-class='input-class'></input>
+      </view>
+    </view>
+
+    <view class='detail-item wechat'>
+      <view class='detail-title'>微信号</view>
+      <view class='detail-box'>
+        <input placeholder='请输入微信号(确保真实)' placeholder-class='input-class'></input>
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class='detail-msg'>
+    <view class='express-title'>
+      <view class='express-dot'></view>
+      <view class='title-words'>
+        <text>物品信息</text>
+        <text></text>
+      </view>
+    </view>
+
+    <view class='express-uplopad-img'>
+      <view class='title-2'>上传图片</view>
+      <view class='upload-btn' bindtap='chooseImage'>
+        <image src='../../images/3-01_09.png'></image>
+      </view>
+      <view class='single-selected-img'>
+        <image class="selected-img" src="{{image}}" mode="aspectFill" bindtap="handleImagePreview" hidden='{{image ==""}}'></image>
+        <view class="image-remove" bindtap="removeImage" hidden='{{image ==""}}'>删除</view>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>物品分类</view>
+      <text class='express-placehold' hidden='{{weight !=""}}'>请选择快物品分类</text>
+      <view class='num-picker'>
+        <picker bindchange="bindWeightChange" value="{{weight}}" range="{{expressWeightarray}}">
+          <view class="picker">
+            {{expressWeightarray[weight]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>闲置价格</view>
+      <view class='detail-box'>
+        <input type='number' placeholder='请输入物品价格' placeholder-class='input-class'></input>
+      </view>
+      <view class='yuan'>元</view>
+    </view>
+
+
+    <view class='detail-item'>
+      <view class='detail-title'>物品原价</view>
+      <view class='detail-box'>
+        <input type='number' placeholder='请输入物品原价' placeholder-class='input-class'></input>
+      </view>
+      <view class='yuan'>元</view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>交接形式</view>
+      <text class='express-placehold' hidden='{{weight !=""}}'>请选择快物品分类</text>
+      <view class='num-picker'>
+        <picker bindchange="bindWeightChange" value="{{weight}}" range="{{expressWeightarray}}">
+          <view class="picker">
+            {{expressWeightarray[weight]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+
+    <view class='express-explain'>
+      <view class='title-2'>物品描述</view>
+      <view class='explain-content'>
+        <textarea class='explain-textarea' placeholder="请输入详细的物品信息" placeholder-class='explain-placeholder' bindinput='noteInputHandle' />
+      </view>
+    </view>
+
+    <view class='user-know'>
+      <label>
+        <checkbox/>
+        <text>我已阅读并同意</text>
+        <text>《校园助助用户协议》</text>
+      </label>
+    </view>
+
+  </view>
+
+
+</scroll-view>
+
+
+<view class='get-btn'>发布</view>

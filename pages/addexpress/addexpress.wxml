@@ -1,0 +1,159 @@
+<!--pages/addexpress/addexpress.wxml-->
+
+<scroll-view class='detail-content' scroll-y='true'>
+  <view class='basisc-msg'>
+    <view class='express-title'>
+      <view class='express-dot'></view>
+      <view class='title-words'>
+        <text>快递信息</text>
+        <text>(除接单人外，该栏信息不会对外公布)</text>
+      </view>
+    </view>
+
+    <view class='express-num'>
+      <view class='title-2'>快递件数</view>
+      <text class='express-placehold' hidden='{{numIndex!==""}}'>请选择快递件数</text>
+      <view class='num-picker'>
+        <picker bindchange="bindPickerChange" value="{{numIndex}}" range="{{expressNumarray}}">
+          <view class="picker">
+            {{expressNumarray[numIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='express-uplopad-img'>
+      <view class='title-2'>上传图片</view>
+      <view class='upload-btn' bindtap='chooseImage'>
+        <image src='../../images/3-01_09.png'></image>
+      </view>
+      <view class='single-selected-img'>
+        <image class="selected-img" src="{{image}}" mode="aspectFill" bindtap="handleImagePreview" hidden='{{image ==""}}'></image>
+        <view class="image-remove" bindtap="removeImage" hidden='{{image ==""}}'>删除</view>
+      </view>
+    </view>
+
+    <view class='express-explain'>
+      <view class='title-2'>快递说明</view>
+      <view class='explain-content'>
+        <textarea class='explain-textarea' placeholder="如有需要，请对上传的快递短信截图进行简要的说明(选填)" placeholder-class='explain-placeholder' bindinput='contentInputHandle' />
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class='detail-msg'>
+    <view class='express-title'>
+      <view class='express-dot'></view>
+      <view class='title-words'>
+        <text>具体信息</text>
+        <text>(猪猪将保护您的个人隐私，仅接单人员可见)</text>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>快递总重量</view>
+      <text class='express-placehold' hidden='{{weight !=""}}'>请选择快递件规格</text>
+      <view class='num-picker'>
+        <picker bindchange="bindWeightChange" value="{{weight}}" range="{{expressWeightarray}}">
+          <view class="picker">
+            {{expressWeightarray[weight]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>总报酬金额</view>
+      <view class='detail-box'>
+        <input type='number' placeholder='请输入报酬金额' placeholder-class='input-class' bindinput='moneyInput'></input>
+      </view>
+      <view class='yuan'>元</view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>姓名</view>
+      <view class='detail-box'>
+        <input placeholder='请输入本次发布人的姓名' placeholder-class='input-class' bindinput='nameInput'></input>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>手机号</view>
+      <view class='detail-box'>
+        <input placeholder='请输入发布人的手机号码' placeholder-class='input-class' bindinput='phoneInput'></input>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>微信号</view>
+      <view class='detail-box'>
+        <input placeholder='请输入微信号(确保真实)' placeholder-class='input-class' bindinput='wechatInput'></input>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>快递点</view>
+      <view class='detail-box'>
+        <input placeholder='请输入快递点' placeholder-class='input-class' bindinput='expressPlaceInput'></input>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>收件地址</view>
+      <view class='detail-box'>
+        <input placeholder='请输入收件地址' placeholder-class='input-class' bindinput='receiveAddressInput'></input>
+      </view>
+    </view>
+
+
+    <view class='detail-item'>
+      <view class='detail-title'>详细地址</view>
+      <view class='detail-box'>
+        <input placeholder='请输入详细楼层或宿舍号' placeholder-class='input-class' bindinput='detailAddressInput'></input>
+      </view>
+    </view>
+
+    <view class='detail-item'>
+      <view class='detail-title'>送达时间</view>
+      <view class='detail-box'>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+         <view class="time-picker">
+            <text hidden='{{showStart}}'>起始时间</text>
+            <text hidden='{{!showStart}}'>{{multiArray[0][multiIndex[0]]}}{{multiArray[1][multiIndex[1]]}}</text>
+        </view>
+        </picker>
+         <view class='to'>至</view>
+          <picker mode="multiSelector" bindchange="bindMultiPickerChange_stop" bindcolumnchange="bindMultiPickerColumnChange_stop" value="{{multiIndex_stop}}" range="{{multiArray_stop}}">
+         <view class="time-picker">
+           <text hidden='{{showEnd}}'>截止时间</text>
+            <text hidden='{{!showEnd}}'>{{multiArray_stop[0][multiIndex_stop[0]]}}{{multiArray_stop[1][multiIndex_stop[1]]}}</text>
+        </view>
+       
+        </picker>
+      </view>
+    </view>
+
+    <view class='express-explain'>
+      <view class='title-2'>备注</view>
+      <view class='explain-content'>
+        <textarea class='explain-textarea' placeholder="温馨提示:请勿在备注里填写与隐私有关的信息(限140字)" placeholder-class='explain-placeholder' bindinput='noteInputHandle' />
+      </view>
+    </view>
+
+    <view class='user-know'>
+      <label>
+        <checkbox/>
+        <text>我已阅读并同意</text>
+        <text>《校园助助用户协议》</text>
+      </label>
+    </view>
+
+  </view>
+
+
+</scroll-view>
+
+
+<view class='get-btn' bindtap='releaseHandle'>发布</view>

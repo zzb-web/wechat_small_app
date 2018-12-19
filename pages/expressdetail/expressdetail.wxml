@@ -1,0 +1,56 @@
+<!--pages/expressdetail/expressdetail.wxml-->
+<view class='detail-content'>
+  <view class='title-1'>
+    酬金
+    <text class='status' style='{{expressMsg.status == 1 ? "" : "color : #777"}}'>{{expressMsg.expressStatus}}</text>
+  </view>
+  <view class='money title-1'>¥ {{expressMsg.money/100}}</view>
+
+  <view class='title-1'>
+    宿舍地址
+  </view>
+  <view class='address title-1'>{{expressMsg.deliveryAddress}} {{expressMsg.deliveryDetailedAddress}}</view>
+
+  <view class='title-2 express-msg-title'>
+    <text>快递所在点</text>
+    <text>快递件数</text>
+  </view>
+  <view class='express-msg'>
+    <text>{{expressMsg.expressAddress}}</text>
+    <text>{{expressMsg.count}}件</text>
+  </view>
+
+  <view class='title-2'>
+    快递重量
+  </view>
+  <view class='detail-msg'>
+    {{expressMsg.specification}}
+  </view>
+
+  <view class='title-2'>
+    最晚送达时间
+  </view>
+  <view class='detail-msg'>
+    {{expressMsg.endTime}} 之前
+  </view>
+
+  <view class='title-2'>
+    备注
+  </view>
+  <view class='note'>
+    {{expressMsg.remark}}
+  </view>
+
+  <view class='line-box'>
+    <view class='line'></view>
+    <view class='circle c-1'></view>
+    <view class='circle c-2'></view>
+  </view>
+
+  <view class='tips'>
+    <view>温馨提示: 点击"我要接单"，即可抢单并获取</view>
+    <view>该订单的具体信息</view>
+  </view>
+
+</view>
+<view class='get-btn'>我要接单</view>

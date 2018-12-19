@@ -1,0 +1,40 @@
+<!--pages/addwall/addwall.wxml-->
+
+<view class='detail-content'>
+  <view class='title'>
+    <input placeholder="请输入标题" 
+            placeholder-class='title-placeholder' 
+            auto-focus 
+            bindinput="titleInputHandle"
+            class='title-input'/>
+  </view>
+  <view class='wall-content'>
+    <textarea class='content-textarea'
+    placeholder="请输入内容···"
+    placeholder-class='title-placeholder'
+    bindinput='contentInputHandle'
+    />
+  </view>
+  <view class='upload-img'>
+    <view class='upload-content'>
+      <view class='upload-title'>上传图片</view>
+      <view class='upload-add' bindtap='chooseImage'>
+        <image src='../../images/3-01_09.png'></image>
+      </view>
+      <view class="selected-img-content">
+        <block wx:for="{{images}}" wx:key="*this">
+          <view class='single-selected-img'>
+            <!-- 图片缩略图  -->
+            <image class="selected-img" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+            <!-- 移除图片的按钮  -->
+            <view class="image-remove" data-idx="{{index}}" bindtap="removeImage">删除</view>
+          </view>
+        </block>
+      </view>
+    </view>
+   
+  </view>
+</view>
+
+
+<view class='get-btn'>发布</view>

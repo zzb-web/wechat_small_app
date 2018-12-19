@@ -1,0 +1,228 @@
+/* pages/myhelp/myhelp.wxss */
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-navbar{
+  width: 94%;
+  margin-left: 3%;
+  border-bottom: none;
+}
+.weui-navbar-2{
+  background-color: #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+.weui-tab__content{
+  height: 100%;
+  position: relative;
+}
+.weui-navbar__slider{
+  background-color: #fba5a6;
+  width: 25%;
+  margin-left: 12.5%;
+}
+.weui-navbar__item{
+  color: #777;
+}
+.weui-navbar__item.weui-bar__item_on{
+  color: #fba5a6;
+}
+
+.show-box{
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 94%;
+  margin-left: 3%;
+  background-color: #fff;
+}
+.comm-panel{
+  /* height: 300rpx; */
+  padding: 20rpx 0;
+}
+.panel-title{
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #777;
+}
+.panel-title>view{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.panel-title>view:first-child{
+  float: left;
+  padding-left: 20rpx;
+}
+.panel-title>view:last-child{
+  float: right;
+  padding-right: 20rpx;
+}
+.font{
+  font-size: 30rpx;
+  color: #777;
+}
+.gender{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 40rpx;
+}
+.detail{
+  width: 90%;
+  padding-left: 40rpx;
+  word-break: break-all;
+}
+.stop{
+  font-size: 30rpx;
+  color: #fba5a6;
+  margin-top: 30rpx;
+  padding-left: 40rpx;
+}
+
+.more{
+  width: 300rpx;
+  height: 80rpx;
+  position: relative;
+  left: calc(50% - 150rpx);
+  top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.more-img{
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+
+
+
+.help-box{
+   height: calc(100% - 130rpx);
+}
+.help-box>view:first-child{
+  margin-top: 30rpx;
+}
+
+.unused-box{
+   height: calc(100% - 130rpx);
+}
+.unused-box>view{
+  width: 94%;
+  margin-left: 3%;
+}
+.unused_slider{
+  background-color: transparent;
+}
+.unused-panel-content{
+  position: relative;
+  width: 100%;
+}
+.unused-showImg{
+  position: absolute;
+  width: 160rpx;
+  height: 160rpx;
+  top: 20rpx;
+  left: 30rpx;
+}
+.unused-showImg>image{
+  width: 100%;
+  height: 100%;
+}
+.unused-content{
+  width: calc(100% - 300rpx);
+  height: 100rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.unused-detail-btn{
+  width: 180rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 130rpx;
+}
+.unused-detail-word text{
+  font-size: 26rpx;
+  position: absolute;
+  top: -5rpx;
+  right: 20rpx;
+}
+.unused-detail-btn image{
+  width: 15rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 0;
+}
+.unused-detail-date{
+  font-size: 18rpx;
+  position: absolute;
+  bottom: -5rpx;
+  right: 0;
+}
+.unused-more{
+  width: 300rpx;
+  height: 80rpx;
+  position: absolute;
+  left: calc(50% - 150rpx);
+  bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* 上墙 */
+.user-msg{
+  width: 100%;
+  height: 90rpx;
+}
+.user-msg>view{
+  float: left;
+}
+.user-msg>view:first-child{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+}
+.user-msg>view:last-child{
+  margin-left: 30rpx;
+}
+.user-name{
+  font-size: 30rpx;
+  padding-top: 16rpx;
+}
+.user-time{
+  font-size: 20rpx;
+}
+.wall-msg{
+  height: 90rpx;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 130rpx;
+  color: #000;
+  line-height: 90rpx;
+}
+.wall-more{
+  width: 100%;
+  height: 100rpx;
+  position: relative;
+}
+.wall-more>image{
+  height: 30rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 36rpx;
+}
+.wall-more-1{right: 140rpx;}
+.wall-more-2{right: 80rpx;}
+.wall-more-3{right: 20rpx;}

@@ -1,0 +1,98 @@
+/* pages/helpderail/helpdetail.wxss */
+.get-btn{
+  height: 100rpx;
+  width: 100%;
+  background-color: #959595;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  margin-top: 150rpx;
+}
+.detail-content{
+  width: 94%;
+  background-color: #fff;
+  margin-left: 3%;
+  box-shadow: 2rpx 4rpx 5rpx #888888;
+  border-radius: 20rpx;
+  padding-top: 50rpx;
+  padding-bottom: 80rpx;
+}
+.detail-content>view{
+  width: 94%;
+  margin-left: 3%;
+}
+.user-msg{
+  height: 90rpx;
+  border-bottom: 1rpx solid #777;
+}
+.user-msg>view{
+  float: left;
+}
+.user-msg>view:first-child{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 10rpx;
+}
+.user-msg>view:last-child{
+  width: calc(100% - 100rpx);
+  height: 70rpx;
+  margin-top: 10rpx;
+  line-height: 70rpx;
+}
+.user-name{
+  float: left;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.price{
+  float: right;
+  font-size: 60rpx;
+  color: #CC1C1C;
+  font-weight: 600;
+}
+.user-time{
+  font-size: 20rpx;
+}
+.wall-msg{
+  color: #000;
+}
+.stop-time{
+  color:  #fba5a6;
+  font-size: 24rpx;
+}
+.gender{
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+}
+.gender>text:first-child,.content>text:first-child{
+  color: #777;
+}
+.gender>text:last-child,.content>text:last-child{
+  margin-left: 80rpx;
+}
+
+.content{
+    font-size: 30rpx;
+}
+.share-box{
+  height: 40rpx;
+  width: auto !important;
+  float: right;
+  margin-right: 3%;
+  font-size: 30rpx;
+  color:#fba5a6;
+}
+.share-box > image{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-top: 5rpx;
+}
+.share-box > text{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  float: left;
+  margin-left: 20rpx;
+}
